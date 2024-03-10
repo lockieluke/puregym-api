@@ -36,3 +36,4 @@ You might have to change the project ID in `deno.json` to your own but running `
 ## Credits
 - [palera1n](https://palera.in/) for the jailbreak, jailbreak done on an old iPhone 7
 - [SSL Kill Switch 3](https://github.com/NyaMisty/ssl-kill-switch3) for making it easy to disable SSL Pinning on a jailbroken iPhone
+- [Proxyman](https://proxyman.io/) for intercepting HTTP requests remotely on a Mac
