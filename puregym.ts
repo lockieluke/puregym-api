@@ -51,3 +51,12 @@ export async function generateQrCode(access_token: string): Promise<string> {
 
     return json["QrCode"];
 }
+
+export async function fetchMemberInfo(access_token: string) {
+    const response = await fetch("https://capi.puregym.com/api/v2/member", {
+        headers: {
+            "Authorization": `Bearer ${access_token}`
+        }
+    });
+    return await response.json();
+}

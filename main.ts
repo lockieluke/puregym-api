@@ -1,30 +1,30 @@
 import { Hono } from 'https://deno.land/x/hono@v3.11.10/mod.ts';
-import {fetchHeadCount, generateQrCode, login, logout} from "./puregym.ts";
+import {fetchHeadCount, fetchMemberInfo, generateQrCode, login, logout} from "./puregym.ts";
 
 const app = new Hono();
 
 app.get("/count", async c => {
     const email = c.req.query("email");
     const pin = c.req.query("pin");
-    const id = c.req.query("id");
+    let id = c.req.query("id");
     if (!email || !pin) {
         c.status(400);
         return c.json({error: "Invalid email or pin"});
     }
 
+    const auth = await login(email, parseInt(pin));
     if (!id) {
-        c.status(400);
-        return c.json({error: "Invalid GYM ID"});
+        const memberInfo = await fetchMemberInfo(auth.access_token);
+        id = memberInfo["HomeGym"]["Id"];
     }
 
-    const auth = await login(email, parseInt(pin));
-    const gymHeadCount = await fetchHeadCount(parseInt(id), auth.access_token);
+    const gymHeadCount = await fetchHeadCount(parseInt(id!), auth.access_token);
 
     await logout(auth.access_token);
 
     return c.json({
         count: gymHeadCount,
-        id: parseInt(id)
+        id: parseInt(id!)
     });
 });
 
