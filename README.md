@@ -32,3 +32,7 @@ However, your email and pin are both sent in plain text same as PureGym's offici
 [Deno Deploy](https://deno.com/deploy) is the easiest way to deploy this API, but you can use any other service that supports Deno.
 You might have to change the project ID in `deno.json` to your own but running `deno task deploy` should work right away as long as
 [deployctl](https://github.com/denoland/deployctl) is installed
+
+## Credits
+- [palera1n](https://palera.in/) for the jailbreak, jailbreak done on an old iPhone 7
+- [SSL Kill Switch 3](https://github.com/NyaMisty/ssl-kill-switch3) for making it easy to disable SSL Pinning on a jailbroken iPhone
