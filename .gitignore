@@ -1,0 +1,16 @@
+### Deno template
+/.idea/
+/.vscode/
+
+/node_modules
+
+.env
+*.orig
+*.pyc
+*.swp
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
