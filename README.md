@@ -1,5 +1,7 @@
 # PureGym API
 
+[PureGym](https://www.puregym.com/) API wrapper powered by [Deno](https://deno.com/).  Underlying API reverse engineered on a jailbroken iPhone with the official PureGym app
+
 ## Usage
 
 ### Gym live count
@@ -19,7 +21,7 @@ GET /qrcode?email=[email]&pin=[pin]
 <sub>It would show 0 when there's less than 10 people at the gym, this is what the underlying API returns and indeed is a limitation</sub>
 
 - Use an app like [SuperWidget](https://superwidget.app/) to display your gym's live count on your home screen as a widget
-- Use an app like [Siri Shortcuts](https://apps.apple.com/us/app/shortcuts/id915249334) to generate a QR Code for your gym access
+- Use [Siri Shortcuts](https://apps.apple.com/us/app/shortcuts/id915249334) to generate a QR Code for your gym access
 
 ## Security
 The API does not store any data as it generates a new access token for every request and attempts to tell PureGym to invalidate it after the request is complete.
